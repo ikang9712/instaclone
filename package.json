@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node server"
+    "dev": "nodemon --exec babel-node server",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
   },
   "repository": {
     "type": "git",
@@ -18,13 +20,21 @@
   },
   "homepage": "https://github.com/ikang9712/instaclone#readme",
   "dependencies": {
+    "@graphql-tools/load-files": "^6.6.1",
+    "@graphql-tools/merge": "^8.3.10",
+    "@graphql-tools/schema": "^9.0.8",
+    "@prisma/client": "^4.5.0",
     "apollo-server": "^2.25.2",
-    "graphql": "^15.8.0"
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "graphql": "^15.8.0",
+    "graphql-tools": "^8.3.10"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/node": "^7.20.0",
     "@babel/preset-env": "^7.19.4",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prisma": "^4.5.0"
   }
 }
