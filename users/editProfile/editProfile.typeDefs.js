@@ -10,6 +10,7 @@ export default gql`
             lastName: String, 
             username: String, 
             email: String, 
-            password: String): editProfileResult!
+            password: String
+        ): editProfileResult!
     }
 `
