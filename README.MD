@@ -1,5 +1,23 @@
 # Instaclone
 
+Install packages
+
+```
+yarn install
+```
+
+Run Studio
+
+```
+yarn run studio
+```
+
+Run Dev Server
+
+```
+yarn run dev
+```
+
 ## User
 - [x] Create Account
 - [x] See Profile

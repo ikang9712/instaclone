@@ -1,3 +1,4 @@
+import {createWriteStream} from "fs"
 import client from "../../client"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
@@ -8,9 +9,14 @@ export default {
         editProfile: protectedResolver(
             async(
                 _, 
-                {firstName, lastName, username, email, password:newPassword},
+                {firstName, lastName, username, email, password:newPassword, bio, avatar},
                 {loggedInUser}
                 ) => {
+                const {filename, createReadStream } = await avatar;
+                const readStream = createReadStream()
+                const writeStream = createWriteStream(process.cwd()+"/uploads/" + filename)
+                readStream.pipe(writeStream)
+                
                 let uglyPassword = null;
                 if (newPassword){
                     uglyPassword = await bcrypt.hash(newPassword, 10)
@@ -26,6 +32,7 @@ export default {
                         lastName, 
                         username, 
                         email, 
+                        bio,
                         ...(uglyPassword && {password: uglyPassword}), // condition && value (es6 syntax)
                     }
                 })
