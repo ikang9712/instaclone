@@ -7,7 +7,6 @@ export default {
                 where: {username},
                 select: {id: true},
             })
-            console.log(check)
             if (!check){
                 return {
                     ok: false,

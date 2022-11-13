@@ -6,6 +6,6 @@ type FollowUserResult {
     error: String
 }
     type Mutation {
-        followUser(toFollow:String): FollowUserResult 
+        followUser(username:String): FollowUserResult 
     }
 `
