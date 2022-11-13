@@ -26,9 +26,9 @@ yarn run dev
 - [x] Change Avatar (Image Upload)
 - [x] Follow User
 - [x] Unfollow User
+- [x] See Followers and See Following w/ Pagination
+- [ ] Computed Fields
 - [ ] Search Users
-- [ ] See Followers
-- [ ] See Following
 
 ## Photos
 - [ ] See Photo
