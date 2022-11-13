@@ -2,11 +2,15 @@ import client from "../../client";
 
 export default {
     Query: {
-        seeProfile : (_, {username}) => {
-            user = client.user.findUnique({
+        seeProfile : async (_, {username}) => {
+            const user = await client.user.findUnique({
                 where: {
                     username, 
-                }
+                },
+                include: {
+                    following: false,
+                    followers: false
+                }  
             })
             if (!user){
                 return {

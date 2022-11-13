@@ -22,9 +22,13 @@ yarn run dev
 - [x] Create Account
 - [x] See Profile
 - [x] Login
-- [ ] Edit Profile
-- [ ] Follow User
-- [ ] Change Avatar (Image Upload)
+- [x] Edit Profile
+- [x] Change Avatar (Image Upload)
+- [x] Follow User
+- [x] Unfollow User
+- [ ] Search Users
+- [ ] See Followers
+- [ ] See Following
 
 ## Photos
 - [ ] See Photo

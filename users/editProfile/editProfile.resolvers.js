@@ -12,10 +12,15 @@ export default {
                 {firstName, lastName, username, email, password:newPassword, bio, avatar},
                 {loggedInUser}
                 ) => {
-                const {filename, createReadStream } = await avatar;
-                const readStream = createReadStream()
-                const writeStream = createWriteStream(process.cwd()+"/uploads/" + filename)
-                readStream.pipe(writeStream)
+                    let avatarUrl = null;
+                if (avatar){
+                    const {filename, createReadStream } = await avatar;
+                    const newFileName = `${loggedInUser.id}-${Date.now()}-${filename}`
+                    const readStream = createReadStream()
+                    const writeStream = createWriteStream(process.cwd()+"/uploads/" + newFileName)
+                    readStream.pipe(writeStream)
+                    avatarUrl = `http://localhost:4000/static/${newFileName}`
+                }
                 
                 let uglyPassword = null;
                 if (newPassword){
@@ -34,6 +39,7 @@ export default {
                         email, 
                         bio,
                         ...(uglyPassword && {password: uglyPassword}), // condition && value (es6 syntax)
+                        ...(avatarUrl && {avatar: avatarUrl})
                     }
                 })
                 if (updatedUser.id){
