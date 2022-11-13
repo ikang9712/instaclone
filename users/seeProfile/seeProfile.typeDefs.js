@@ -5,6 +5,6 @@ export default gql`
         error: String
     }
     type Query {
-        seeProfile(username:String!): seeProfileResult!
+        seeProfile(username:String!): User
     }
 `
