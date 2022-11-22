@@ -32,11 +32,11 @@ yarn run dev
 - [x] Search Users
 
 ## Photos
-- [ ] See Photo
 - [ ] Upload Photo
+- [ ] See Photo
+- [ ] Search Photos
+- [ ] See Hashtags
 - [ ] Edit Photo
 - [ ] Like / Unlike Photo
 - [ ] See Photo Likes
 - [ ] See Feed
-- [ ] Search Photos
-- [ ] See Hashtags
